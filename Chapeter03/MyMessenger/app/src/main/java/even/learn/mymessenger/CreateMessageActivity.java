@@ -23,7 +23,7 @@ public class CreateMessageActivity extends Activity {
          * 第一个参数告诉Android这个意图来自哪个对象
          * 第二个参数是需要接收这个意图的活动的类名
          */
-        Intent intent = new Intent(this, ReceiveMessageActivity.class);
+//        Intent intent = new Intent(this, ReceiveMessageActivity.class);
         /**
          * intent.putExtra("message", value);
          * message : 传入值的String名
@@ -31,7 +31,13 @@ public class CreateMessageActivity extends Activity {
          *
          * 可以重复使用putExtra为intent添加大量额外数据,但是要注意"message"唯一
          */
-        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, messageText);
-        startActivity(intent);
+//        intent.putExtra(ReceiveMessageActivity.EXTRA_MESSAGE, messageText);
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, messageText);
+        String chosenTitle = getString(R.string.chooser);
+        Intent chosenIntent = Intent.createChooser(intent, chosenTitle);
+//        startActivity(intent);
+        startActivity(chosenIntent);
     }
 }
