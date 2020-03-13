@@ -14,6 +14,7 @@ public class StopwatchActivity extends Activity {
 
     private int seconds = 0;
     private boolean isRunning = false;
+    private boolean wasRunning = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +23,21 @@ public class StopwatchActivity extends Activity {
         if (savedInstanceState != null) {
             seconds = savedInstanceState.getInt("seconds");
             isRunning = savedInstanceState.getBoolean("isRunning");
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
         }
         runTimer();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        isRunning = wasRunning;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isRunning = wasRunning;
     }
 
     public void onClickStart(View view) {
@@ -60,8 +74,23 @@ public class StopwatchActivity extends Activity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        wasRunning = isRunning;
+        isRunning = false;
+    }
+
+    @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         outState.putInt("seconds", seconds);
         outState.putBoolean("isRunning", isRunning);
+        outState.putBoolean("wasRunning", wasRunning);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        wasRunning = isRunning;
+        isRunning = false;
     }
 }
