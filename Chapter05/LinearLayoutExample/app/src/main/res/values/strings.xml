@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">LinearLayoutExample</string>
-    <string name="to">To</string>
-    <string name="message">Message</string>
-    <string name="send">Send</string>
+    <string name="how">How do you like your tea Served?</string>
+    <string name="toggle_hot">Hot</string>
+    <string name="toggle_cold">Cold</string>
+    <string name="milk">Milk</string>
+    <string name="sugar">Sugar</string>
+    <string name="lemon">Lemon</string>
 </resources>
