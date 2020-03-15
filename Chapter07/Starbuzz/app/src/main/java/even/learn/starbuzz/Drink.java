@@ -31,6 +31,7 @@ public class Drink {
         return name;
     }
 
+    //适配器将自动调用此方法作为,name
     @NonNull
     @Override
     public String toString() {
