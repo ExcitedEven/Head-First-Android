@@ -6,4 +6,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="workout_description">Descriptioin</string>
     <string name="workout_title">Title</string>
+    <string name="start">START</string>
+    <string name="stop">STOP</string>
+    <string name="reset">RESET</string>
 </resources>
