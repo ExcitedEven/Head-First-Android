@@ -6,13 +6,23 @@
   android:orientation="vertical"
   tools:context=".MainActivity">
 
-  <include
-    android:id="@+id/toolbar"
-    layout="@layout/toolbar_main" />
+  <com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <include
+      android:id="@+id/toolbar"
+      layout="@layout/toolbar_main" />
+
+    <com.google.android.material.tabs.TabLayout
+      android:id="@+id/tabs"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+  </com.google.android.material.appbar.AppBarLayout>
 
   <androidx.viewpager.widget.ViewPager
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
-
 </LinearLayout>
