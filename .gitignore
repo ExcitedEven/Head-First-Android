@@ -83,4 +83,8 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+# custom
 .SpaceVim.d/
+## checkstyle插件
+checkstyle-idea.xml
